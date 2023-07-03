@@ -113,7 +113,7 @@ void loop() {
     }else{
       stepsControl=lastSteps;
       EEPROM.write(stepsAddr, stepsControl);
-      Println("eprom write control=", stepsControl);
+      Println("eprom write steps control=", stepsControl);
     }
   }
   // speedControl mode
