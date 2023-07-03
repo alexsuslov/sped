@@ -109,11 +109,11 @@ void loop() {
     if(speedControl==0 ) {
       stepsControl=0;
       EEPROM.write(stepsAddr, stepsControl);
-      Serial.print("reset steps");
+      Serial.print("reset");
     }else{
       stepsControl=lastSteps;
       EEPROM.write(stepsAddr, stepsControl);
-      Println("set steps control=", stepsControl);
+      Println("eprom write control=", stepsControl);
     }
   }
   // speedControl mode
@@ -138,8 +138,7 @@ void loop() {
   }
 }
 
-
-
+// таймер
 ISR(TIMER1_A) {
   lastSteps=steps;
   if (speedControl==0){
