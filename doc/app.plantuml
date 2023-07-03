@@ -1,0 +1,29 @@
+@startuml app
+
+object app{
+    onEncoder()
+    onControl()
+    ----
+    displaySpeed()
+    setMotorSpeed()
+}
+
+object encoder{
+    setCurrent()
+}
+encoder->app
+
+object control{
+    left()
+    right()
+}
+
+control->app
+
+object display
+app-> display
+
+object motor
+app->motor
+
+@enduml
